@@ -8,7 +8,7 @@ pipenv install
 
 > .env credentials
 
-- `API_SECRET`: Django secret key
+- `SECRET_KEY`: Django secret key
 
 # Init Frontend
 
@@ -20,5 +20,5 @@ npm install
 
 > .env credentials
 
-- `PORT`: port for local development
-- `API_URL`: api url for requesting queries to backend
+- `PORT`: Port for local development
+- `API_URL`: Api url for requesting queries to backend
