@@ -1,28 +1,24 @@
-# Backend
-
-> Install packages
+# Init Backend
 
 ```
-npm i
-```
-
-> Copy .env.example to .env & fill credentials
-
-```
+mkdir .venv
 cp .env.example .env
+pipenv install
 ```
+
+> .env credentials
+
+- `API_SECRET`: Django secret key
+
+# Init Frontend
+
+```
+cd frontend
+cp .env.example .env
+npm install
+```
+
+> .env credentials
 
 - `PORT`: port for local development
 - `API_URL`: api url for requesting queries to backend
-
-> Run local server for development
-
-```
-npm run dev
-```
-
-> Build your project and minify for production
-
-```
-npm run build
-```

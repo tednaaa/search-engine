@@ -1,7 +1,10 @@
+.vscode
 .venv
 .env
 
+pipfile.lock
+package-lock.json
+
 db.sqlite3
 
-# frontend
 node_modules
