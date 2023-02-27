@@ -1,3 +1,9 @@
+# Start dev server for backend & frontend
+
+```
+make -j
+```
+
 # Init Backend
 
 ```
