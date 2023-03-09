@@ -1,0 +1,17 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[scripts]
+server = "python manage.py runserver"
+
+[packages]
+django = "4.1.7"
+djangorestframework = "3.14.0"
+nltk = "3.8.1"
+
+[dev-packages]
+
+[requires]
+python_version = "3.11"

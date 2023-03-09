@@ -1,4 +1,4 @@
-# Start dev server for backend & frontend
+# Start parallel backend & frontend dev servers
 
 ```
 make -j
