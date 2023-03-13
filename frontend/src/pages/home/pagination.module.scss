@@ -1,0 +1,22 @@
+.pagination {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.previousButton,
+.nextButton {
+  height: 24px;
+  width: 24px;
+  background: url('./arrow.svg');
+}
+
+.previousButton {
+  margin-right: 10px;
+}
+
+.nextButton {
+  margin-left: 10px;
+  transform: rotate(180deg);
+}

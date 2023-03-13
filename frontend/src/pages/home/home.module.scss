@@ -1,0 +1,143 @@
+.wrapper {
+  background-color: var(--blue-color);
+  min-height: 100vh;
+  display: flex;
+  padding-top: 100px;
+}
+
+.title {
+  font-size: 36px;
+  line-height: 40px;
+  max-width: 430px;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input {
+  width: 300px;
+  border: 2px solid var(--black-color);
+  padding: 10px;
+  border-radius: 10px;
+
+  &::placeholder {
+    color: var(--black-color);
+  }
+}
+
+.inputWrapper {
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  top: 44px;
+  left: 0;
+  width: 100%;
+  border-radius: 10px;
+  z-index: 1;
+  background: var(--emerald-color);
+}
+
+.dropdownItem {
+  border-radius: 10px;
+
+  button {
+    border-radius: 10px;
+    padding: 10px;
+    height: 100%;
+    width: 100%;
+    text-align: left;
+  }
+
+  &:hover,
+  button:focus-visible {
+    outline: none;
+    background-color: var(--orange-color);
+  }
+}
+
+.loader {
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.searchButton {
+  margin-left: 10px;
+  height: 20px;
+  width: 20px;
+  background-image: url('./search.svg');
+}
+
+.list {
+  max-width: 800px;
+  margin: 30px auto;
+}
+
+.listItem {
+  padding: 25px;
+  border-radius: 10px;
+  background-color: var(--black-color);
+  color: var(--orange-color);
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+.postTitle {
+  font-size: 24px;
+  line-height: 28px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.postText {
+  p {
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+
+    img {
+      margin-top: 10px;
+    }
+  }
+
+  pre {
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.postViews {
+  position: relative;
+  margin-top: 30px;
+  padding-left: 32px;
+  font-weight: 700;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 24px;
+    width: 24px;
+    background-image: url('./eye.svg');
+  }
+}
+
+pre,
+blockquote,
+code {
+  overflow: auto;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+}

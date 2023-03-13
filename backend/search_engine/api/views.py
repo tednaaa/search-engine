@@ -3,27 +3,18 @@ from rest_framework.response import Response
 from ..models import Document
 from .serializers import DocumentSerializer
 from lib.query_completion import complete_query
+from lib.custom_pagination import CustomPagination
 from lib.query import run_query
 
 @api_view(['GET'])
-def complete(request):
-    query = request.GET['q']
+def get_suggestions(request):
+    query = request.GET['query']
 
     completions = complete_query(query)
     return Response(completions)
 
 @api_view(['GET'])
-def get_routes(request):
-    routes = [
-        'GET /api',
-        'GET /api/rooms',
-        'GET /api/rooms/:id',
-    ]
-
-    return Response(routes)
-
-@api_view(['GET'])
-def get_docs(request):
+def search(request):
     query = request.GET['query']
     doc_ids = run_query(query)
 
@@ -34,6 +25,10 @@ def get_docs(request):
 
     sorted_docs_by_count = sorted(docs, key=lambda d:d.views_count, reverse=True)
 
-    serializer_docs = DocumentSerializer(sorted_docs_by_count, many=True)
+    paginator = CustomPagination()
+    paginator.page_size = request.GET['page_size']
+    result_page = paginator.paginate_queryset(sorted_docs_by_count, request)
 
-    return Response(serializer_docs.data)
+    serializer_docs = DocumentSerializer(result_page, many=True)
+
+    return paginator.get_paginated_response(serializer_docs.data)

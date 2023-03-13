@@ -1,6 +1,6 @@
 import { routeNames } from '@/shared/router';
 import { ComponentType } from 'react';
-import { RootPage } from './root';
+import { HomePage } from './home/home';
 
 interface IRoute {
   path: string;
@@ -9,7 +9,7 @@ interface IRoute {
 
 export const publicRoutes: IRoute[] = [
   {
-    path: routeNames.ROOT,
-    Component: RootPage,
+    path: routeNames.HOME,
+    Component: HomePage,
   },
 ];

@@ -10,6 +10,7 @@ server = "python manage.py runserver"
 django = "4.1.7"
 djangorestframework = "3.14.0"
 nltk = "3.8.1"
+django-cors-headers = "3.14.0"
 
 [dev-packages]
 
