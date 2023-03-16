@@ -29,7 +29,6 @@ def build_index():
                text = elem.attrib["Body"]
                doc_id = elem.attrib["Id"]
 
-
                terms = preprocess_line_en(text)
 
                term_idx = 0
@@ -41,10 +40,8 @@ def build_index():
                         else:
                             index[term][doc_id] = TermPositions([term_idx])
                     else:
-                        # Haven't seen this word before
                         index[term] = IndexTerm({doc_id: TermPositions([term_idx])})
 
-    # Calculate and store the document frequencies
     for term in index:
         index[term].docFreq = len(index[term])
 
@@ -53,15 +50,6 @@ def build_index():
 index = []
 if 'runserver' in sys.argv:
     index = build_index()
-    # # Print the contents of the index
-    # for term in sorted(index):
-    #     print(f"{term}:{index[term].docFreq}")
-    #     for doc in index[term]:
-    #         print(f"\t{doc}: {','.join([str(x) for x in sorted(index[term][doc].positions)])}")
-
-
-
-
 
 if __name__ == "__main__":
     build_index()

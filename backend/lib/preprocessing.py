@@ -1,7 +1,10 @@
 from nltk.stem import PorterStemmer
 import re
+from shared.constants import STOPWORDS_PATH
 
-with open("lib/datasets/stopwords_en.txt") as f:
+
+
+with open(STOPWORDS_PATH) as f:
     enStopWords = set(f.read().splitlines())
 
 stemmer = PorterStemmer()

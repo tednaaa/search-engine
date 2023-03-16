@@ -1,7 +1,6 @@
 from lib.build_index import index
 from lib.preprocessing import preprocess_line_en
 from search_engine.models import Document
-import re
 import math
 
 
